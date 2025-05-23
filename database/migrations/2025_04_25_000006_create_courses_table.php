@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('day');
             $table->timestamps();
 
-            $table->unsignedBigInteger('area_id')->unique();
-            $table->unsignedBigInteger('training_center_id')->unique();
+            $table->unsignedBigInteger('area_id')->nullable();
+            $table->unsignedBigInteger('training_center_id')->nullable();
 
             $table->foreign('area_id')->references('id')->on('areas');
             $table->foreign('training_center_id')->references('id')->on('training_centers');

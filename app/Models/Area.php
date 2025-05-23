@@ -13,4 +13,5 @@ class Area extends Model
     public function teachers() {
         return $this->hasMany(Teacher::class);
     }
+    
 }
