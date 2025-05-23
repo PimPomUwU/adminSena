@@ -19,6 +19,10 @@ Route::get('/', function () {
 Route::get('areas', [AreaController::class, 'index'])->name('area.index');
 Route::get('area/create', [AreaController::class, 'create'])->name('area.create');
 Route::post('area/store', [AreaController::class, 'store'])->name('area.store');
+Route::get('area/{area}', [AreaController::class, 'show'])->name('area.show');
+Route::put('area/{area}', [AreaController::class, 'update'])->name('area.update');
+Route::get('area/{area}/edit', [AreaController::class, 'edit'])->name('area.edit');
+Route::delete('area/{area}',[AreaController::class,'destroy'])->name('area.destroy');
 
 //Computer
 Route::get('computers', [ComputerController::class, 'index'])->name('computer.index');
@@ -34,6 +38,10 @@ Route::post('training-center/store', [TrainingCenterController::class, 'store'])
 Route::get('apprentice', [ApprenticeController::class, 'index'])->name('apprentice.index');
 Route::get('apprentice/create', [ApprenticeController::class, 'create'])->name('apprentice.create');
 Route::post('apprentice/store', [ApprenticeController::class, 'store'])->name('apprentice.store');
+Route::get('apprentice/{apprentice}', [ApprenticeController::class, 'show'])->name('apprentice.show');
+Route::put('apprentice/{apprentice}', [ApprenticeController::class, 'update'])->name('apprentice.update');
+Route::get('apprentice/{apprentice}/edit', [ApprenticeController::class, 'edit'])->name('apprentice.edit');
+Route::delete('apprentice/{apprentice}',[ApprenticeController::class,'destroy'])->name('apprentice.destroy');
 
 //Teacher
 Route::get('teachers', [TeacherController::class, 'index'])->name('teacher.index');
