@@ -3,7 +3,7 @@
 @section('content')
 
 <div>
-    <h2>Detalles de Categoría</h2>
+    <h2>Detalles de TRAINING CENTER</h2>
 
     <div>
         <table>
@@ -11,13 +11,15 @@
                 <tr>
                     <th>ID</th>
                     <th>Nombre</th>
+                    <th>location</th>
                     
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>{{ $area['id'] }}</td>
-                    <td>{{ $area['name'] }}</td>
+                    <td>{{ $training_center['id'] }}</td>
+                    <td>{{ $training_center['name'] }}</td>
+                    <td>{{ $training_center['location'] }}</td>
                 </tr>
             </tbody>
         </table>

@@ -3,21 +3,23 @@
 @section('content')
 
 <div>
-    <h2>Detalles de Categoría</h2>
+    <h2>Detalles de course </h2>
 
     <div>
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Nombre</th>
+                    <th>course_number</th>
+                    <th>day</th>
                     
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>{{ $area['id'] }}</td>
-                    <td>{{ $area['name'] }}</td>
+                    <td>{{ $course['id'] }}</td>
+                    <td>{{ $course['course_number'] }}</td>
+                    <td>{{ $course['day'] }}</td>
                 </tr>
             </tbody>
         </table>

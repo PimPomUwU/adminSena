@@ -20,13 +20,43 @@ class TrainingCenterController extends Controller
     }
 
     public function store(Request $request) {
-        $training_centers = new TrainingCenter();
+        $training_center = new TrainingCenter();
 
-        $training_centers->name = $request->name;
-        $training_centers->location = $request->location;
+        $training_center->name = $request->name;
+        $training_center->location = $request->location;
 
-        $training_centers->save();
+        $training_center->save();
 
-        return $training_centers;
+        return redirect()->route('training-center.index');
+    }
+
+    public function show(TrainingCenter $training_center)
+    {
+
+        return view('training-center.show', compact('training_center'));
+    }
+    public function edit(TrainingCenter $training_center)
+    {
+        return view('training-center.edit', compact( 'training_center'));
+    }
+
+    public function update(Request $request, TrainingCenter $training_center)
+    {
+
+
+        $training_center->name = $request->name;
+        $training_center->location = $request->location;
+
+        $training_center->save();
+
+        return redirect()->route('training-center.index');
+    }
+
+    public function destroy(TrainingCenter $training_center)
+    {
+
+        $training_center->delete();
+
+        return redirect()->route('training-center.index');
     }
 }

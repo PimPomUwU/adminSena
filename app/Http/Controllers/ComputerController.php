@@ -18,13 +18,45 @@ class ComputerController extends Controller
     }
 
     public function store(Request $request) {
-        $computers = new Computer();
+        $computer = new Computer();
 
-        $computers->number = $request->number;
-        $computers->brand = $request->brand;
+        $computer->number = $request->number;
+        $computer->brand = $request->brand;
 
-        $computers->save();
+        $computer->save();
 
-        return $computers;
+        return redirect()->route('computer.index');
+
     }
+
+    public function show(Computer $computer)
+    {
+
+        return view('computer.show', compact('computer'));
+    }
+    public function edit(Computer $computer)
+    {
+        return view('computer.edit', compact( 'computer'));
+    }
+
+    public function update(Request $request, Computer $computer)
+    {
+
+
+        $computer->number = $request->number;
+        $computer->brand = $request->brand;
+
+        $computer->save();
+
+        return redirect()->route('computer.index');
+    }
+
+    public function destroy(Computer $computer)
+    {
+
+        $computer->delete();
+
+        return redirect()->route('computer.index');
+    }
+
 }
