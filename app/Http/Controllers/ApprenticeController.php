@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Apprentice;
+use App\Models\Course;
+use App\Models\Computer;
 
 class ApprenticeController extends Controller
 {
     //
     public function index()
-    {
+    {   
         $apprentices = Apprentice::all();
 
         return view('apprentice.index', compact('apprentices'));
@@ -17,7 +19,10 @@ class ApprenticeController extends Controller
 
     public function create()
     {
-        return view('apprentice.create');
+        $course_ids = Course::pluck('id'); //Lista de todos los 'id'
+        $computer_ids = Computer::pluck('id');
+
+        return view('apprentice.create', compact('course_ids', 'computer_ids'));
     }
 
     public function store(Request $request)
@@ -39,6 +44,8 @@ class ApprenticeController extends Controller
     public function show(Apprentice $apprentice)
     {
         //$apprentice = Apprentice::find($id); //Es el Apprentice $apprentice de arriba
+        $course = Course::all();
+        $computer = Computer::all();
 
         return view('apprentice.show', compact('apprentice'));
     }

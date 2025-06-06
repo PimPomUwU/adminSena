@@ -9,6 +9,8 @@
         <table>
             <thead>
                 <tr>
+                    <th>Area id</th>
+                    <th>TrainingCenter id</th>
                     <th>ID</th>
                     <th>course_number</th>
                     <th>day</th>
@@ -17,6 +19,8 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>{{ $course['area_id'] }}</td>
+                    <td>{{ $course['training_center_id'] }}</td>
                     <td>{{ $course['id'] }}</td>
                     <td>{{ $course['course_number'] }}</td>
                     <td>{{ $course['day'] }}</td>

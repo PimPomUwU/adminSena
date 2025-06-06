@@ -9,6 +9,8 @@
         <table class="table table-bordered table-hover">
             <thead class="table-success">
                 <tr>
+                    <th scope="col">Course id</th>
+                    <th scope="col">Computer id</th>
                     <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Email</th>
@@ -18,6 +20,8 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>{{ $apprentice['course_id'] }}</td>
+                    <td>{{ $apprentice['computer_id'] }}</td>
                     <td>{{ $apprentice['id'] }}</td>
                     <td>{{ $apprentice['name'] }}</td>
                     <td>{{ $apprentice['email'] }}</td>

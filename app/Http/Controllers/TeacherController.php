@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Teacher;
+use App\Models\Area;
+use App\Models\TrainingCenter;
 
 class TeacherController extends Controller
 {
@@ -16,7 +18,9 @@ class TeacherController extends Controller
  
      public function create()
     {
-        return view('teacher.create');
+        $area_ids = Area::pluck('id');
+        $trainingCenter_ids = TrainingCenter::pluck("id");
+        return view('teacher.create', compact('area_ids', 'trainingCenter_ids'));
     }
 
 
