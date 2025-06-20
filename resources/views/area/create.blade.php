@@ -8,6 +8,9 @@
         <br>
         <input type="text" id="nombre" name="name">
         <br>
+        <label>Adjuntar archivo PDF</label>
+        <br>
+        <input type="file" name="urlPdf" class="form-control-file" accept="pdf/*">
         <button type="submit">Subir</button>
     </form>
 @endsection

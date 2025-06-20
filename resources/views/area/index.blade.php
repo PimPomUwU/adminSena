@@ -31,6 +31,9 @@
                             <button type="submit"> Eliminar </button>
                         </form>
                     </td>
+                    <td> 
+                        <iframe src="{{ asset('storage/images/'.$area->urlPDF) }}"  frameborder="0"></iframe>
+                       </td>
                 </tr>
             @endforeach
         </table>
