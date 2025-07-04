@@ -48,7 +48,7 @@ class ComputerController extends Controller
 
     }
 
-    public function show(Computer $computer)
+    public function show($id)
     {
 
         //return view('computer.show', compact('computer'));
@@ -56,6 +56,7 @@ class ComputerController extends Controller
         $computer = Computer::findOrFail($id);
         return response()->json($computer);
     }
+
     public function edit(Computer $computer)
     {
         return view('computer.edit', compact( 'computer'));
