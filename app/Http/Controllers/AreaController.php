@@ -36,7 +36,7 @@ class AreaController extends Controller
         $file=$request->file("urlPdf");
         $nombreArchivo = "pdf_".time().".".$file->guessExtension();
        //guardado del archivo
-       $request->file('urlPdf')->storeAs('images', $nombreArchivo, 'public');
+       $request->file('urlPdf')->storeAs('images'.$nombreArchivo, 'public');
         $areas->urlPdf = $nombreArchivo;
 
         $areas->save();

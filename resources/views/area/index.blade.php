@@ -32,7 +32,7 @@
                         </form>
                     </td>
                     <td> 
-                        <iframe src="{{ asset('storage/images/'.$area->urlPDF) }}"  frameborder="0"></iframe>
+                        <iframe src="{{ asset('storage/images/').$area->urlPDF }}"  frameborder="0"></iframe>
                        </td>
                 </tr>
             @endforeach
