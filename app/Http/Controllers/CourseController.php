@@ -12,8 +12,15 @@ class CourseController extends Controller
     //
     public function index()
     {
-        $courses = Course::all();
-        return view('course.index', compact('courses'));
+        //API
+        $courses = Course::included()->get();
+        //$courses = Course::included()->filter()->get();
+        //$courses = Course::included()->filter()->sort()->get();
+        //$courses = Course::included()->filter()->sort()->GetOrPaginate();
+        return response()->json($courses);
+
+/*         $courses = Course::all();
+        return view('course.index', compact('courses')); */
     }
  
      public function create()

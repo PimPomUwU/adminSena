@@ -9,9 +9,16 @@ class TrainingCenterController extends Controller
 {
     //
     public function index() {
-        $training_centers = TrainingCenter::all();
+        //API
+        //$training_centers = TrainingCenter::included()->get();
+        //$training_centers = TrainingCenter::included()->filter()->get();
+        //$training_centers = TrainingCenter::included()->filter()->sort()->get();
+        $training_centers = TrainingCenter::included()->filter()->sort()->GetOrPaginate();
+        return response()->json($training_centers);
+        
+/*         $training_centers = TrainingCenter::all();
 
-        return view('training-center.index', compact('training_centers'));
+        return view('training-center.index', compact('training_centers')); */
     }
 
     public function create() {

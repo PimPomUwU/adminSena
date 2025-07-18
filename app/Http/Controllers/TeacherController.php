@@ -9,11 +9,19 @@ use App\Models\TrainingCenter;
 
 class TeacherController extends Controller
 {
-    //
+
+
     public function index()
     {
+        //API
+        //$teachers = Teacher::included()->get();
+        //$teachers = Teacher::included()->filter()->get();
+        //$teachers = Teacher::included()->filter()->sort()->get();
+        $teachers = Teacher::included()->filter()->sort()->GetOrPaginate();
+        return response()->json($teachers);
+/* 
         $teachers = Teacher::all();
-        return view('teacher.index', compact('teachers'));
+        return view('teacher.index', compact('teachers')); */
     }
  
      public function create()

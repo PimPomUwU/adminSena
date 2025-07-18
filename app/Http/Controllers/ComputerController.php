@@ -9,6 +9,15 @@ class ComputerController extends Controller
     //
     public function index() {
 
+
+                //API
+        //$computers = Computer::included()->get();
+        //$computers = Computer::included()->filter()->get();
+        //$computers = Computer::included()->filter()->sort()->get();
+        $computers = Computer::included()->filter()->sort()->GetOrPaginate();
+        return response()->json($computers);
+
+
         //return 'hola';
         //Manera clasica
         //$computers = Computer::all();
@@ -17,9 +26,9 @@ class ComputerController extends Controller
 
 
         //$computers = Computer::all();
-        $computers = Computer::with(['apprentice'])->get();
+        /* $computers = Computer::with(['apprentice'])->get();
         return response()->json($computers);
-
+ */
     }
 
     public function create() {

@@ -11,14 +11,16 @@ class AreaController extends Controller
     public function index() {
         //API
         //$areas=Area::included()->get();
-        // $areas=Area::included()->filter()->get();
-        //return response()->json($areas);
+        //$areas=Area::included()->filter()->get();
+        //$areas=Area::included()->filter()->sort()->get();
+        $areas=Area::included()->filter()->sort()->GetOrPaginate();
+        return response()->json($areas);
 
 
         //CRUD de toda la vida
-        $areas = Area::all();
+/*         $areas = Area::all();
 
-        return view('area.index', compact('areas'));
+        return view('area.index', compact('areas')); */
 
         // $areas = Area::included()->findOrFail(2);
 
